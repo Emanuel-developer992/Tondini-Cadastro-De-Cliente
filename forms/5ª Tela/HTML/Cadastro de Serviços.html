@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css">
+        <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+        <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js"> charset="uft-8"</script>
+        </head>
+        <body>
+            <div class="fluig-style-guide">
+                <form name="form" role="form">
+                    <div class="row">
+                        <!-- 1° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Cadastro de Serviços</h3>
+                            </div>
+                            <div class="panel-body">
+                                
+                                <!-- 1° Input -->
+                                <div class="form-group col-md-12">
+                                    <label for="codServ">Código do Serviço</label>
+                                    <select name="codServ" type="text" class="form-control" id="codServ"></select>
+                                    <option value="ISO 9001 V.2015">ISO 9001 V.2015</option>
+                                    <option value="ISO 14001 V.2015">ISO 14001 V.2015</option>
+                                    <option value="ISO 45001 V.2018">ISO 45001 V.2018</option>
+                                    <option value="ISO/IEC 17025 V.2017">ISO/IEC 17025 V.2017</option>
+                                    <option value="ISO/IATF 16949 V.2016">ISO/IATF 16949 V.2016</option>
+                                    <option value="SASC">SASC</option>
+                                    <option value="BPL">BPL</option>
+                                    <option value="Portaria 563 - INMETRO">Portaria 563 - INMETRO</option>
+                                    <option value="SEG-ON">SEG-ON</option>
+                                    <option value="Outros">Outros</option>
+                                </div>
+        
+                                <!-- 2° Input -->
+                                <div class="form-group col-md-4">
+                                    <label for="requisito">Requisito</label>
+                                    <input name="requisito" type="text" class="form-control" id="requisito">
+                                </div>
+        
+                                <!-- 3° Input -->
+                                <div class="form-group col-md-2">
+                                    <label for="descricaoRs">Descrição do Requisito</label>
+                                    <textarea name="descricaoRs" type="time" class="form-control" id="descricaoRs" style="height: 100px"></textarea>
+                                </div>
+
+                                 <!-- 4° Input -->
+                                 <div class="form-group col-md-12">
+                                    <label for="descricaoAtv">Sugestão de Ação para Atendimento</label>
+                                    <textarea name="descricaoAtv" type="text" class="form-control" id="descricaoAtv" style="height: 100px"></textarea>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </body>
+</html>        
