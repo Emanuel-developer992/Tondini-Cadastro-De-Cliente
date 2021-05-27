@@ -1,0 +1,203 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css">
+        <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+        <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js"> charset="uft-8"</script> 
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        </head>
+        <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+        <body>
+            <div class="fluig-style-guide">
+                <form name="form" role="form">
+                    <div class="row">
+                        <!-- 1° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Informações Básicas</h3>
+                            </div>
+                            <div class="panel-body">
+                                
+                                <!-- 1° Input -->
+                                <!-- ID -->
+        
+                                <!-- 2° Input -->
+                                <div class="form-group col-md-4">
+                                    <label for="cnpjAdd">CNPJ</label>
+                                    <input name="cnpjAdd" type="text" class="form-control" id="cnpjAdd" mask="00.000.000/0000-00">
+                                </div>
+        
+                                <!-- 3° Input -->
+                                <div class="form-group col-md-8">
+                                    <label for="companyNameAdd">Razão Social</label>
+                                    <input name="companyNameAdd" type="text" class="form-control" id="companyNameAdd">
+                                </div>
+        
+                                <!-- 4° Input -->
+                                <div class="form-group col-md-3">
+                                    <label for="nomeFantasiaAdd">Nome Fantasia</label>
+                                    <input name="nomeFantasiaAdd" type="text" class="form-control" id="nomeFantasiaAdd">
+                                </div>
+        
+                                <!-- 5° Input -->
+                                <div class="form-group col-md-3">
+                                    <label for="escopoAdd">Escopo de Atividades ou Certificação</label>
+                                    <input name="escopoAdd" type="text" class="form-control" id="escopoAdd">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Endereço e Complemento</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 6° Input (Endereço e Complemento)-->
+                                <div class="form-group col-md-3">
+                                    <label for="cepAdd">CEP</label>
+                                    <input name="cepAdd" type="text" class="form-control" id="cepAdd" mask="00000-000">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="enderecoAdd">Endereço</label>
+                                    <input name="enderecoAdd" type="text" class="form-control" id="enderecoAdd">
+                                </div>
+
+                                <div class="form-group col-md-1">
+                                    <label for="numeroAdd">N°</label>
+                                    <input name="numeroAdd" type="text" class="form-control" id="numeroAdd">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="complementoAdd">Complemento</label>
+                                    <input name="complementoAdd" type="text" class="form-control" id="complementoAdd">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="bairroAdd">Bairro</label>
+                                    <input name="bairroAdd" type="text" class="form-control" id="bairroAdd">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="estadoAdd">Estado</label>
+                                    <input name="estadoAdd" type="text" class="form-control" id="estadoAdd">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="cidadeAdd">Pais</label>
+                                    <input name="cidadeAdd" type="text" class="form-control" id="cidadeAdd">
+                                </div>
+                            </div>    
+                        </div>
+
+                        <!-- 3° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contatos</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 7° Input -->
+                                <div class="form-group col-md-3">
+                                    <label for="telefoneAdd">Telefone Corporativo</label>
+                                    <input name="telefoneAdd" type="text" class="form-control" id="telefoneAdd" mask="(00) 0000-0000">
+                                </div>
+
+                                <!-- 8° Input -->
+                                <div class="form-group col-md-5">
+                                    <label for="emailAdd">E-mail Corporativo</label>
+                                    <input name="emailAdd" type="email" class="form-control" id="emailAdd">
+                                </div>
+
+                            </div>
+                        </div>        
+
+                        <!-- 4° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contato Comercial</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 9° Input (Contato Comercial)-->
+                               
+                            </div>
+                        </div>
+
+                        <!-- 5° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contato Financeiro</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 10° Input (Contato Financeiro) -->
+
+                                
+                            </div>
+                        </div> 
+
+                        <!-- 6° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contato Adicional</h3>
+                            </div>
+                            <div class="panel-body">
+                        
+                                <!-- 11° Input (Contato Adicional) -->
+                                
+                                
+                            </div>    
+                        </div>
+
+
+                        <!-- 7° Painel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Complementos</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- 12° Input (Ativo?) -->
+                                <div class="form-group col-md-3">
+                                    <label for="ativoAdd">Status</label>
+                                    <select name="ativoAdd" type="text" class="form-control" id="ativoAdd">
+                                        <option value="Ativo">Ativo</option>
+                                        <option value="Inativo">Inativo</option>
+                                    </select>
+                                    
+                                </div>
+
+                                <!-- 13° Input -->
+                                <div class="form-group col-md-4">
+                                    <label for="escopoTondiniAdd">Escopo de Prestação de Serviço Tondini</label>
+                                    <input name="escopoTondiniAdd" type="text" class="form-control" id="escopoTondiniAdd">
+                                </div>                           
+
+                            </div>
+                        </div>
+                    </div>             
+                </form>
+            </div>
+        </body>
+        <script type="text/javascript">
+        var diaVenc = FLUIGC.calendar('#diaVenc');
+        var vigencia = FLUIGC.calendar('#vigencia');
+        </script>
+        <script type="text/javascript" src="cepAuto.js"></script>
+        <!-- JavaScript Bundle with Popper -->
+
+</html>         

@@ -1,0 +1,268 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+    <form name="form" role="form">
+        
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tcss_work_nav" style="color: #1d394f;">T-Class Work</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tcss_legal_nav" style="color: #1d394f;">T-Class Legal</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tcss_action_nav" style="color: #1d394f;">T-Class Action</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tcss_audit_nav" style="color: #1d394f;">T-Class Audit</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tcss_data_control_nav" style="color: #1d394f;">T-Class Data Control</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tcss_listen_nav" style="color: #1d394f;">T-Class Listen</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tcss_management_nav" style="color: #1d394f;">T-Class Management System</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tcss_risk_nav" style="color: #1d394f;">T-Class Risk</a>
+            </li>
+        </ul>
+
+        
+
+        <div class="tab-content">
+
+            <!-- T-Class Work-->
+            <div id="tcss_work_nav" class="container tab-pane active" aria-selected="true">
+
+                <div class="row">
+
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                        <h1 class="display-4" style="color: #1d394f;">T-Class Work</h1>
+                        <p class="lead" style="color: #30b1ea;">Requisitos dos serviços cadastrados para o grupo/cliente</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <strong>Atenção!</strong> Para dar andamento ao processo preencha corretamente todos os campos.
+                    </div>
+
+                    <!-- 1º Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Telas BD - ADMIN</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 1º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="selecNormal">Selecionar Norma</label>
+                                <input name="selecNormal" type="text" class="form-control" id="selecNormal" placeholder="Selecione a norma...">
+                            </div>
+
+                            <!-- 2º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="requisito">Requisito</label>
+                                <input name="requisito" type="text" class="form-control" id="requisito" placeholder="Requisito...">
+                            </div>
+
+                            <!-- 3º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="tRequisito">Título do Requisito</label>
+                                <input name="tRequisito" type="text" class="form-control" id="tRequisito" placeholder="Título do Requisito...">
+                            </div>
+
+                            <!-- 4º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="dRequisito">Descrição do Requisito</label>
+                                <input name="dRequisito" type="text" class="form-control" id="dRequisito" placeholder="Descrição do Requisito...">
+                            </div>
+
+                            <!-- 5º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="atendimento">Orientação para Atendimento</label>
+                                <input name="atendimento" type="text" class="form-control" id="atendimento" placeholder="Orientação para atendimento...">
+                            </div>
+
+                            <!-- 6º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="doc_modelo">Documento Modelo</label>
+                                <input name="doc_modelo" type="text" class="form-control" id="doc_modelo" placeholder="Documento modelo...">
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- 2º Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">T-Class Work</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 7º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="selecNormal_w">Selecionar Norma</label>
+                                <input name="selecNormal_w" type="text" class="form-control" id="selecNormal_w" placeholder="Selecione a norma...">
+                            </div>
+
+                            <!-- 8º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="requisito_w">Requisito</label>
+                                <select name="requisito_w" type="text" class="form-control" id="requisito_w" placeholder="Requisito...">
+                                    <option value="4.1">4.1</option>
+                                    <option value="5.1">5.1</option>
+                                </select>
+                            </div>
+
+                            <!-- 9º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="dRequisito_w">Descrição do Requisito</label>
+                                <select name="dRequisito_w" type="text" class="form-control" id="dRequisito_w" placeholder="Descrição do Requisito...">
+                                    <option value="descrição 1">descrição 1</option>
+                                    <option value="descrição 2">descrição 2</option>
+                                </select>
+                            </div>
+
+                            <!-- 10º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="status">Status</label>
+                                <input name="status" type="text" class="form-control form-control-sm mInt" id="status" placeholder="Status..." readonly="" style="text-align: center;">
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- 3º Painel-->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Ações T-Class Work</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 11º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="acao_atendimento">Ação para atendimento</label>
+                                <input name="acao_atendimento" type="text" class="form-control" id="acao_atendimento" placeholder="Ação para atendimento...">
+                            </div>
+
+                            <!-- 12º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="prazo">Prazo</label>
+                                <input name="prazo" type="date" class="form-control" id="prazo" placeholder="Prazo...">
+                            </div>
+
+                            <!-- 13º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="responsavel">Responsável</label>
+                                <input name="responsavel" type="text" class="form-control" id="responsavel" placeholder="Responsável...">
+                            </div>
+
+                            <!-- 14º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="resultadoA">Resultado Alcançado</label>
+                                <input name="resultadoA" type="text" class="form-control" id="resultadoA" placeholder="Resultado Alcançado...">
+                            </div>
+
+                            <!-- 15º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="realizado">Realizado em:</label>
+                                <input name="realizado" type="date" class="form-control" id="realizado">
+                            </div>
+
+
+                            <!-- 16º Input -->
+                            <div class="form-group col-md-4">
+                                <label for="status_w">Status</label>
+                                <select name="status_w" type="text" class="form-control" id="status_w">
+                                    <option value="Finalizado">Finalizado</option>
+                                    <option value="Em Aberto">Em Aberto</option>
+                                    <option value="No prazo">No prazo</option>
+                                </select>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="add1" id="add1" type="button" class="btn btn-success" onclick="pushAdd1()"><b>Novo Registro</b></button>
+                              
+                                <button name="update" id="update" type="button" class="btn btn-primary" onclick="updateReload()" style="background-color: #222d6b;"><b>Atualizar</b></button>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br>
+
+                            <div id="popup" class="alert alert-danger pop-close" role="alert">Selecione um documento para atualizar</div>
+
+                        </div>
+                    </div>
+
+                    <!-- Tabela 1--> 
+                    <div class="table-responsive col-md-12">
+                        <table tablename="tabelaTcss_Work" class="table table-hover" id="tabelaTcss_Work" noaddbutton="true" nodeletebutton="false">
+                            <thead>
+                                <tr>
+                                    <th>Ação para atendimento</th>
+                                    <th>Resultado Alcançado</th>
+                                    <th>Prazo</th>
+                                    <th>Responsável</th>
+                                    <th>Realizado em:</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div> 
+
+            <!-- T-Class Legal -->
+            <div id="tcss_legal_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+
+            <!-- T-Class Action -->
+            <div id="tcss_action_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div> 
+
+            <!-- T-Class Audit -->
+            <div id="tcss_audit_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+
+            <!-- T-Class Data Control -->
+            <div id="tcss_data_control_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+
+            <!-- T-Class Listen -->
+            <div id="tcss_listen_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+            
+            <!-- T-Class Management System -->
+            <div id="tcss_management_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+
+            <!-- T-Class Risk -->
+            <div id="tcss_risk_nav" class="container tab-pane fade" aria-selected="false">
+
+            </div>
+
+        </div>
+        
+        <script type="text/javascript" src="/resources/js/t_class.js"></script>
+
+    </form>
+</div>

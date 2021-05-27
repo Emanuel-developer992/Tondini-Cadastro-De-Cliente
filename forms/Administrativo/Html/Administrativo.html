@@ -1,0 +1,1060 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+    <form name="form" role="form">
+        
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#cadastro_cliente_nav" style="color: #1d394f;">Cadastro de Cliente</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#analise_critica_nav" style="color: #1d394f;">Entrada de Análise Crítica</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#requisitos_legais_nav" style="color: #1d394f;">Requisitos Legais Aplicáveis</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#agenda_nav" style="color: #1d394f;">Agenda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#cadastro_servicos_nav" style="color: #1d394f;">Cadastro de Seviços</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- Cadastro de Cliente-->
+            <div id="cadastro_cliente_nav" class="container tab-pane active" aria-selected="true">
+
+                <!--Cadastro Principal-->
+                <div class="row">
+
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                    <h1 class="display-4" style="color: #1d394f;">Cadastro de Cliente</h1>
+                    <p class="lead" style="color: #30b1ea;">Cadastro realizado para adição de grupos</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Atenção!</strong> Para dar andamento ao processo preencha corretamente todos os campos.
+                </div>
+
+                
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Informações Básicas</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <!-- 1° Input -->
+                            <div class="form-group col-md-2">
+                                <label for="codeId">Código Sequêncial</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">ID</div>
+                                    <input value="CC-22" name="codeId" type="text" class="form-control form-control-sm mInt" id="codeId" readonly="" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="cnpj">CNPJ</label>
+                                <input name="cnpj" type="text" class="form-control" id="cnpj" mask="00.000.000/0000-00" placeholder="00.000.000/0000-00">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="companyName">Razão Social</label>
+                                <input name="companyName" type="text" class="form-control" id="companyName" placeholder="Razão social...">
+                            </div>
+    
+                            <!-- 4° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="nomeFantasia">Nome Fantasia</label>
+                                <input name="nomeFantasia" type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia...">
+                            </div>
+    
+                            <!-- 5° Input -->
+                            <div class="form-group col-md-12">
+                                <label for="escopo">Escopo de Atividades ou Certificação</label>
+                                <input name="escopo" type="text" class="form-control" id="escopo" placeholder="Escopo...">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Endereço e Complemento</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 6° Input (Endereço e Complemento)-->
+                            <div class="form-group col-md-3">
+                                <label for="cep">CEP</label>
+                                <input name="cep" type="text" class="form-control" id="cep" mask="00000-000" placeholder="CEP...">
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="form-group col-md-6">
+                                <label for="endereco">Endereço</label>
+                                <input name="endereco" type="text" class="form-control" id="endereco" placeholder="Rua/Avenidada/Rodovia">
+                            </div>
+
+                            <div class="form-group col-md-1">
+                                <label for="numero">N°</label>
+                                <input name="numero" type="text" class="form-control" id="numero" placeholder="Nº00">
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label for="complemento">Complemento</label>
+                                <input name="complemento" type="text" class="form-control" id="complemento" placeholder="Ponto de referência...">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="bairro">Bairro</label>
+                                <input name="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro...">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="estado">Estado</label>
+                                <input name="estado" type="text" class="form-control" id="estado" placeholder="Estado...">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="cidade">Pais</label>
+                                <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Pais...">
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                    
+                        </div>    
+                    </div>
+
+                    <!-- 3° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contatos</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 7° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="telefone">Telefone Corporativo</label>
+                                <input name="telefone" type="text" class="form-control" id="telefone" mask="(00) 0000-0000" placeholder="Telefone Corporativo...">
+                            </div>
+
+                            <!-- 8° Input -->
+                            <div class="form-group col-md-5">
+                                <label for="email">E-mail Corporativo</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="E-mail Corporativo...">
+                            </div>
+
+                        </div>
+                    </div>        
+
+                    <!-- 4° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Comercial</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 9° Input (Contato Comercial)-->
+
+                            <div class="form-group col-md-5">
+                                <label>Nome</label>
+                                <input type="text" id="nomeAdd1" name="nomeAdd1" class="form-control" placeholder="Nome...">
+                            </div>
+                        
+                            <div class="form-group col-md-7">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoAdd1" name="departamentoAdd1" class="form-control" placeholder="Departamento...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Celular</label>
+                                <input type="text" id="celularAdd1" name="celularAdd1" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneAdd1" name="telefoneAdd1" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>E-mail</label>
+                                <input type="text" id="emailAdd1" name="emailAdd1" class="form-control" placeholder="E-mail...">
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br>
+
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="add1" id="add1" type="button" class="btn btn-success" onclick="pushAdd1()"><b>Adicionar +</b></button>
+                              </div>
+
+                            <div class="clearfix"></div>
+                            <br>  
+
+                             <!-- Tabela 1--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaAddComercial" class="table table-bordered" id="tabelaAddComercial" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- 5° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Financeiro</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 10° Input (Contato Financeiro) -->
+
+                            <div class="form-group col-md-5">
+                                <label>Nome</label>
+                                <input type="text" id="nomeAdd2" name="nomeAdd2" class="form-control" placeholder="Nome...">
+                            </div>
+                        
+                            <div class="form-group col-md-7">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoAdd2" name="departamentoAdd2" class="form-control" placeholder="Departamento...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Celular</label>
+                                <input type="text" id="celularAdd2" name="celularAdd2" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneAdd2" name="telefoneAdd2" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>E-mail</label>
+                                <input type="text" id="emailAdd2" name="emailAdd2" class="form-control" placeholder="E-mail...">
+                            </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="add2" id="add2" type="button" class="btn btn-success" onclick="pushAdd2()"><b>Adicionar +</b></button>
+                              </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                             <!-- Tabela 2--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaAddFinanceiro" class="table table-bordered" id="tabelaAddFinanceiro" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> 
+                            
+                        </div>        
+                    </div>
+
+                    <!-- 6° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Adicional</h3>
+                        </div>
+                        <div class="panel-body">
+                    
+                            <!-- 11° Input (Contato Adicional) -->
+
+                            <div class="form-group col-md-5">
+                                <label>Nome</label>
+                                <input type="text" id="nomeAdd3" name="nomeAdd3" class="form-control" placeholder="Nome...">
+                            </div>
+                        
+                            <div class="form-group col-md-7">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoAdd3" name="departamentoAdd3" class="form-control" placeholder="Departamento...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Celular</label>
+                                <input type="text" id="celularAdd3" name="celularAdd3" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
+                            </div>                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneAdd3" name="telefoneAdd3" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-4">
+                                <label>E-mail</label>
+                                <input type="text" id="emailAdd3" name="emailAdd3" class="form-control" placeholder="E-mail...">
+                            </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="add3" id="add3" type="button" class="btn btn-success" onclick="pushAdd3()"><b>Adicionar +</b></button>
+                              </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                             <!-- Tabela 3--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaAddAdicional" class="table table-bordered" id="tabelaAddAdicional" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                        <!-- 7° Painel -->
+                        <div class="panel panel-info" style="border-color: #222d6b;">
+                            <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Complementos</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 12° Input (Ativo?) -->
+                            <div class="form-group col-md-3">
+                                <label for="ativo">Status</label>
+                                <select name="ativo" type="text" class="form-control" id="ativo">
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                            </div>
+
+                            <!-- 13° Input -->
+                            <div class="form-group col-md-6">
+                                <label for="escopoTondini">Escopo de Prestação de Serviço Tondini</label>
+                                <input name="escopoTondini" type="text" class="form-control" id="escopoTondini">
+                            </div>
+
+                            <!-- 14° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="mensalidade">R$ Mensalidade</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">R$</div>
+                                    <input name="mensalidade" type="text" class="form-control" id="mensalidade" mask="#.##0,00">
+                                </div>
+                            </div>
+
+                            <!-- 15° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="diaVenc">Dia de Vencimento</label>
+                                <input name="diaVenc" type="date" class="form-control" id="diaVenc">
+                            </div>
+
+                            <!-- 16° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="formaPag">Forma de Pagamento</label>
+                                <select name="formaPag" type="text" class="form-control" id="formaPag">
+                                    <option value="Boleto">Boleto</option>
+                                    <option value="Transferência Bancária">Transferência Bancária</option>
+                                </select>
+                            </div>
+
+                            <!-- 17° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="indiceF">Índice Financeiro</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">R$</div>
+                                    <input name="indiceF" type="text" class="form-control" id="indiceF" mask="#.##0,00">
+                                </div>
+                            </div>
+
+                            <!-- 18° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="vigencia">Vigência do Contrato</label>
+                                <input name="vigencia" type="date" class="form-control" id="vigencia">
+                            </div>
+
+                            <!-- 19° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="seguimentoC">Seguimento de Cadastro Fluig</label>
+                                <select name="seguimentoC" type="text" class="form-control" id="seguimentoC">
+                                    <option value="Serviços">Serviços</option>
+                                    <option value="Industria">Industria</option>
+                                    <option value="Construção Civil">Construção Civil</option>
+                                </select>
+                            </div>                              
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--CNPJ Adicional-->
+                <div class="row">
+
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                        <h1 class="display-4" style="color: #1d394f;">CNPJ</h1>
+                        <p class="lead" style="color: #30b1ea;">Campos para insira um CNPJ adicional</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Informações Básicas</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <!-- 1° Input -->
+                            <!-- ID -->
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="cnpjAdd">CNPJ</label>
+                                <input name="cnpjAdd" type="text" class="form-control" id="cnpjAdd" mask="00.000.000/0000-00">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-8">
+                                <label for="companyNameAdd">Razão Social</label>
+                                <input name="companyNameAdd" type="text" class="form-control" id="companyNameAdd">
+                            </div>
+    
+                            <!-- 4° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="nomeFantasiaAdd">Nome Fantasia</label>
+                                <input name="nomeFantasiaAdd" type="text" class="form-control" id="nomeFantasiaAdd">
+                            </div>
+    
+                            <!-- 5° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="escopoAdd">Escopo de Atividades ou Certificação</label>
+                                <input name="escopoAdd" type="text" class="form-control" id="escopoAdd">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Endereço e Complemento</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 6° Input (Endereço e Complemento)-->
+                            <div class="form-group col-md-3">
+                                <label for="cepAdd">CEP</label>
+                                <input name="cepAdd" type="text" class="form-control" id="cepAdd" mask="00000-000">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="enderecoAdd">Endereço</label>
+                                <input name="enderecoAdd" type="text" class="form-control" id="enderecoAdd">
+                            </div>
+
+                            <div class="form-group col-md-1">
+                                <label for="numeroAdd">N°</label>
+                                <input name="numeroAdd" type="text" class="form-control" id="numeroAdd">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="complementoAdd">Complemento</label>
+                                <input name="complementoAdd" type="text" class="form-control" id="complementoAdd">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="bairroAdd">Bairro</label>
+                                <input name="bairroAdd" type="text" class="form-control" id="bairroAdd">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="estadoAdd">Estado</label>
+                                <input name="estadoAdd" type="text" class="form-control" id="estadoAdd">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="cidadeAdd">Pais</label>
+                                <input name="cidadeAdd" type="text" class="form-control" id="cidadeAdd">
+                            </div>
+                        </div>    
+                    </div>
+
+                    <!-- 3° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contatos</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 7° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="telefoneAdd">Telefone Corporativo</label>
+                                <input name="telefoneAdd" type="text" class="form-control" id="telefoneAdd" mask="(00) 0000-0000">
+                            </div>
+
+                            <!-- 8° Input -->
+                            <div class="form-group col-md-5">
+                                <label for="emailAdd">E-mail Corporativo</label>
+                                <input name="emailAdd" type="email" class="form-control" id="emailAdd">
+                            </div>
+
+                        </div>
+                    </div>        
+
+                    <!-- 4° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Comercial</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 9° Input (Contato Comercial)-->
+
+                            <div class="form-group col-md-3">
+                                <label>Nome</label>
+                                <input type="text" id="nomeCnpjAdd1" name="nomeCnpjAdd1" class="form-control">
+                            </div>
+                        
+                            <div class="form-group col-md-3">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoCnpjAdd1" name="departamentoCnpjAdd1" class="form-control">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Celular</label>
+                                <input type="text" id="celularCnpjAdd1" name="celularCnpjAdd1" class="form-control" mask="(00)00000-0000">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneCnpjAdd1" name="telefoneCnpjAdd1" class="form-control" mask="(00)0000-0000">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>E-mail</label>
+                                <input type="text" id="emailCnpjAdd1" name="emailCnpjAdd1" class="form-control">
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br>
+
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="cnpjAdd1" id="cnpjAdd1" type="button" class="btn btn-success" onclick="pushCnpjAdd1()"><b>Adicionar +</b></button>
+                              </div>
+
+                            <div class="clearfix"></div>
+                            <br>  
+
+                             <!-- Tabela 1--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaCnpjAddComercial" class="table table-bordered" id="tabelaCnpjAddComercial" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- 5° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Financeiro</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 10° Input (Contato Financeiro) -->
+
+                            <div class="form-group col-md-3">
+                                <label>Nome</label>
+                                <input type="text" id="nomeCnpjAdd2" name="nomeCnpjAdd2" class="form-control">
+                            </div>
+                        
+                            <div class="form-group col-md-3">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoCnpjAdd2" name="departamentoCnpjAdd2" class="form-control">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Celular</label>
+                                <input type="text" id="celularCnpjAdd2" name="celularCnpjAdd2" class="form-control" mask="(00)00000-0000">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneCnpjAdd2" name="telefoneCnpjAdd2" class="form-control" mask="(00)0000-0000">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>E-mail</label>
+                                <input type="text" id="emailCnpjAdd2" name="emailCnpjAdd2" class="form-control">
+                            </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="cnpjAdd2" id="cnpjAdd2" type="button" class="btn btn-success" onclick="pushCnpjAdd2()"><b>Adicionar +</b></button>
+                              </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                             <!-- Tabela 2--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaCnpjAddFinanceiro" class="table table-bordered" id="tabelaCnpjAddFinanceiro" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> 
+                            
+                        </div>        
+                    </div>
+
+                    <!-- 6° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Contato Adicional</h3>
+                        </div>
+                        <div class="panel-body">
+                    
+                            <!-- 11° Input (Contato Adicional) -->
+
+                            <div class="form-group col-md-3">
+                                <label>Nome</label>
+                                <input type="text" id="nomeCnpjAdd3" name="nomeCnpjAdd3" class="form-control">
+                            </div>
+                        
+                            <div class="form-group col-md-3">
+                                <label>Departamento</label>
+                                <input type="text" id="departamentoCnpjAdd3" name="departamentoCnpjAdd3" class="form-control">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Celular</label>
+                                <input type="text" id="celularCnpjAdd3" name="celularCnpjAdd3" class="form-control" mask="(00)00000-0000">
+                            </div>                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>Telefone</label>
+                                <input type="text" id="telefoneCnpjAdd3" name="telefoneCnpjAdd3" class="form-control" mask="(00)0000-0000">
+                            </div>
+                    
+                        
+                            <div class="form-group col-md-3">
+                                <label>E-mail</label>
+                                <input type="text" id="emailCnpjAdd3" name="emailCnpjAdd3" class="form-control">
+                            </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button name="cnpjAdd3" id="cnpjAdd3" type="button" class="btn btn-success" onclick="pushCnpjAdd3()"><b>Adicionar +</b></button>
+                              </div>
+    
+                            <div class="clearfix"></div>
+                            <br>
+    
+                             <!-- Tabela 3--> 
+                             <div class="table-responsive col-md-12">
+                                    <table tablename="tabelaCnpjAddAdicional" class="table table-bordered" id="tabelaCnpjAddAdicional" noaddbutton="true" nodeletebutton="false">
+                                        <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Departamento</th>
+                                                <th>Celular</th>
+                                                <th>Telefone</th>
+                                                <th>E-mail</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><div id="excluir" name="excluir"></div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <!-- 7° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Complementos</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- 12° Input (Ativo?) -->
+                            <div class="form-group col-md-3">
+                                <label for="ativoAdd">Status</label>
+                                <select name="ativoAdd" type="text" class="form-control" id="ativoAdd">
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                                
+                            </div>
+
+                            <!-- 13° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="escopoTondiniAdd">Escopo de Prestação de Serviço Tondini</label>
+                                <input name="escopoTondiniAdd" type="text" class="form-control" id="escopoTondiniAdd">
+                            </div>                           
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Entrada de Análise Crítica -->
+            <div id="analise_critica_nav" class="container tab-pane fade" aria-selected="false">
+
+                <div class="row">
+
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Entradas de Análise Crítica</h3>
+                        </div>
+                        <div class="panel-body">
+    
+                            <!-- 1° Input -->
+                            <div class="form-group col-md-12">
+                                <label for="norma">Norma Aplicável</label>
+                                <input name="norma" type="text" class="form-control" id="norma" dataset="" dataseKey="" datasetValue="">
+                            </div>
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="Requisito">Requisito</label>
+                                <input name="Requisito" type="text" class="form-control" id="Requisito">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-2">
+                                <label for="descricaoAC">Desrição</label>
+                                <textarea name="descricaoAC" type="number" class="form-control" id="descricaoAC" style="height: 100px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Requisitos Legais Aplicáveis -->
+            <div id="requisitos_legais_nav" class="container tab-pane fade" aria-selected="false">
+
+                <div class="row">
+            
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Requisito Legais Aplicáveis (MA & SST) + Federal, Estadual e Municipal</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <!-- 1° Input -->
+                            <div class="form-group col-md-2">
+                                <label for="aplicacao1">Aplicação</label>
+                                <select name="aplicacao1" type="text" class="form-control" id="aplicacao1">
+                                    <option value="Lei">Lei</option>
+                                    <option value="Portaria">Portaria</option>
+                                    <option value="Decreto">Decreto</option>
+                                    <option value="Resolução">Resolução</option>
+                                    <option value="NBR">NBR</option>    
+                                    <option value="NR">NR</option>
+                                </select>   
+                            </div>
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="identific">Identificação</label>
+                                <input name="identific" type="text" class="form-control" id="identific">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="dataUP">Data</label>
+                                <input name="dataUP" type="date" class="form-control" id="dataUP">
+                            </div>
+    
+                            <!-- 4° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="orgao">Órgão</label>
+                                <select name="orgao" type="text" class="form-control" id="orgao">
+                                    <option value="ABNT">ABNT</option>
+                                    <option value="CETESB">CETESB</option>
+                                    <option value="CONOMA">CONOMA</option>
+                                    <option value="INMETRO">INMETRO</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+    
+                            <!-- 5° Input -->
+                            <div class="form-group col-md-3">
+                                <label for="aplicacao2">Aplicação</label>
+                                <select name="aplicacao2" type="text" class="form-control" id="aplicacao2">
+                                    <option value="Meio Ambiente">Meio Ambiente</option>
+                                    <option value="Segurança e Saúde Ocupacional">Segurança e Saúde Ocupacional</option>
+                                    <option value="Qualidade Empresarial">Qualidade Empresarial</option>
+                                </select>
+                            </div>
+
+                                <!-- 6° Input -->
+                                <div class="form-group col-md-4">
+                                <label for="abrangencia">Abrangência</label>
+                                <select name="abrangencia" type="text" class="form-control" id="abrangencia">
+                                    <option value="Internacional">Internacional</option>
+                                    <option value="Mercosul">Mercosul</option>
+                                    <option value="Europeia">Europeia</option>
+                                    <option value="Americana(EUA)">Americana(EUA)</option>  
+                                    <option value="Federal(Brasil)">Federal(Brasil)</option>
+                                    <option value="Estadual">Estadual</option>
+                                    <option value="Municipal">Municipal</option>
+                                </select>
+                            </div>
+
+                            <!-- 7° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="descricaoLeg">Descrição da Legislação</label>
+                                <textarea name="descricaoLeg" type="date" class="form-control" id="descricaoLeg" style="height: 100px"></textarea>
+                            </div>
+
+                            <!-- 8° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="escopoA">Escopo Aplicável</label>
+                                <select name="escopoA" type="date" class="form-control" id="escopoA">
+                                    <option value="Serviços">Serviços</option>
+                                    <option value="Industria">Industria</option>
+                                    <option value="Construção Civil">Construção Civil</option>
+                                </select>
+                            </div>
+
+                            <!-- 8° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="cAtender">Como Atender?</label>
+                                <textarea name="cAtender" type="date" class="form-control" id="cAtender" style="height: 100px"></textarea>                                    
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Agenda -->
+            <div id="agenda_nav" class="container tab-pane fade" aria-selected="false">
+
+                <div class="row">
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Agenda</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <!-- 1° Input -->
+                            <div class="form-group col-md-12">
+                                <label for="consultor">Consultor</label>
+                                <input name="consultor" type="text" class="form-control" id="consultor">
+                            </div>
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="dataAtv">Data da Atividade</label>
+                                <input name="dataAtv" type="date" class="form-control" id="dataAtv">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-2">
+                                <label for="horA">Horário da Atividade</label>
+                                <input name="horA" type="time" class="form-control" id="horA">
+                            </div>
+
+                                <!-- 4° Input -->
+                                <div class="form-group col-md-12">
+                                <label for="descricaoAtv">Descrição das Atividades</label>
+                                <textarea name="descricaoAtv" type="text" class="form-control" id="descricaoAtv" style="height: 100px"></textarea>
+                            </div>
+    
+                            <!-- 5° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="docRel">Documentos Relacionados</label>
+                                <input name="docRel" type="text" class="form-control" id="docRel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cadastro de Seviços -->
+            <div id="cadastro_servicos_nav" class="container tab-pane fade" aria-selected="false">
+
+                <div class="row">
+                    <!-- 1° Painel -->
+                    <div class="panel panel-info" style="border-color: #222d6b;">
+                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
+                            <h3 class="panel-title">Cadastro de Serviços</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <!-- 1° Input -->
+                            <div class="form-group col-md-12">
+                                <label for="codServ">Código do Serviço</label>
+                                <select name="codServ" type="text" class="form-control" id="codServ">
+                                    <option value="ISO 9001 V.2015">ISO 9001 V.2015</option>
+                                    <option value="ISO 14001 V.2015">ISO 14001 V.2015</option>
+                                    <option value="ISO 45001 V.2018">ISO 45001 V.2018</option>
+                                    <option value="ISO/IEC 17025 V.2017">ISO/IEC 17025 V.2017</option>
+                                    <option value="ISO/IATF 16949 V.2016">ISO/IATF 16949 V.2016</option>
+                                    <option value="SASC">SASC</option>
+                                    <option value="SOC">SOC</option>
+                                    <option value="BPL">BPL</option>
+                                    <option value="Portaria 563 - INMETRO">Portaria 563 - INMETRO</option>
+                                    <option value="SEG-ON">SEG-ON</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+    
+                            <!-- 2° Input -->
+                            <div class="form-group col-md-4">
+                                <label for="requisito">Requisito</label>
+                                <input name="requisito" type="text" class="form-control" id="requisito">
+                            </div>
+    
+                            <!-- 3° Input -->
+                            <div class="form-group col-md-2">
+                                <label for="descricaoRs">Descrição do Requisito</label>
+                                <textarea name="descricaoRs" type="time" class="form-control" id="descricaoRs" style="height: 100px"></textarea>
+                            </div>
+
+                                <!-- 4° Input -->
+                                <div class="form-group col-md-12">
+                                <label for="descricaoAtv">Sugestão de Ação para Atendimento</label>
+                                <textarea name="descricaoAtv" type="text" class="form-control" id="descricaoAtv" style="height: 100px"></textarea>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>     
+    </form>
+</div>
