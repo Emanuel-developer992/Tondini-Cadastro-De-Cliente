@@ -1,5 +1,8 @@
 <div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+
     <form name="form" role="form">
+
+        <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
         
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
@@ -53,7 +56,7 @@
                                 <label for="codeId">Código Sequêncial</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">ID</div>
-                                    <input value="CC-22" name="codeId" type="text" class="form-control form-control-sm mInt" id="codeId" readonly="" style="text-align: center;">
+                                    <input name="codeId" type="text" class="form-control form-control-sm mInt" id="codeId" readonly style="text-align: center;">
                                 </div>
                             </div>
 
@@ -62,7 +65,7 @@
                             <!-- 2° Input -->
                             <div class="form-group col-md-4">
                                 <label for="cnpj">CNPJ</label>
-                                <input name="cnpj" type="text" class="form-control" id="cnpj" mask="00.000.000/0000-00" placeholder="00.000.000/0000-00">
+                                <input name="cnpj" type="text" class="form-control mCnpj" maxlength="18" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="cnpj" placeholder="00.000.000/0000-00">
                             </div>
     
                             <!-- 3° Input -->
@@ -95,7 +98,7 @@
                             <!-- 6° Input (Endereço e Complemento)-->
                             <div class="form-group col-md-3">
                                 <label for="cep">CEP</label>
-                                <input name="cep" type="text" class="form-control" id="cep" mask="00000-000" placeholder="CEP...">
+                                <input name="cep" type="text" class="form-control mCep" id="cep" maxlength="9" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="CEP...">
                             </div>
 
                             <div class="clearfix"></div>
@@ -115,24 +118,28 @@
                                 <input name="complemento" type="text" class="form-control" id="complemento" placeholder="Ponto de referência...">
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="bairro">Bairro</label>
                                 <input name="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro...">
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="estado">Estado</label>
                                 <input name="estado" type="text" class="form-control" id="estado" placeholder="Estado...">
                             </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="cidade">Pais</label>
-                                <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Pais...">
+                            <div class="form-group col-md-3">
+                                <label for="cidade">Cidade</label>
+                                <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade...">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="pais">Pais</label>
+                                <input name="pais" type="text" class="form-control" id="pais" placeholder="Pais...">
                             </div>
 
                             <div class="clearfix"></div>
 
-                    
                         </div>    
                     </div>
 
@@ -146,7 +153,7 @@
                             <!-- 7° Input -->
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone Corporativo</label>
-                                <input name="telefone" type="text" class="form-control" id="telefone" mask="(00) 0000-0000" placeholder="Telefone Corporativo...">
+                                <input name="telefone" type="text" class="form-control mPhone" id="telefone" maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Telefone Corporativo...">
                             </div>
 
                             <!-- 8° Input -->
@@ -161,7 +168,7 @@
                     <!-- 4° Painel -->
                     <div class="panel panel-info" style="border-color: #222d6b;">
                         <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Comercial</h3>
+                            <h3 class="panel-title">Contatos Adicionais</h3>
                         </div>
                         <div class="panel-body">
 
@@ -179,12 +186,12 @@
                         
                             <div class="form-group col-md-4">
                                 <label>Celular</label>
-                                <input type="text" id="celularAdd1" name="celularAdd1" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
+                                <input type="text" id="celularAdd1" name="celularAdd1" class="form-control mPhone" maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Celular...">
                             </div>                    
                         
                             <div class="form-group col-md-4">
                                 <label>Telefone</label>
-                                <input type="text" id="telefoneAdd1" name="telefoneAdd1" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
+                                <input type="text" id="telefoneAdd1" name="telefoneAdd1" class="form-control mPhoneFix" maxlength="14" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Telefone...">
                             </div>
                     
                         
@@ -197,7 +204,7 @@
                             <br>
 
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="add1" id="add1" type="button" class="btn btn-success" onclick="pushAdd1()"><b>Adicionar +</b></button>
+                                <button name="add1" id="add1" type="button" class="btn btn-success" onclick="pushTab('tb_contato1', 1);"><b>Adicionar +</b></button>
                               </div>
 
                             <div class="clearfix"></div>
@@ -205,7 +212,7 @@
 
                              <!-- Tabela 1--> 
                              <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaAddComercial" class="table table-bordered" id="tabelaAddComercial" noaddbutton="true" nodeletebutton="false">
+                                    <table tablename="tb_contato1" class="table table-hover" id="tb_contato1" noaddbutton="true" nodeletebutton="false">
                                         <thead>
                                             <tr>
                                                 <th>Nome</th>
@@ -213,165 +220,12 @@
                                                 <th>Celular</th>
                                                 <th>Telefone</th>
                                                 <th>E-mail</th>
-                                                <th>Ações</th>
+                                                <th>Ação</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- 5° Painel -->
-                    <div class="panel panel-info" style="border-color: #222d6b;">
-                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Financeiro</h3>
-                        </div>
-                        <div class="panel-body">
-
-                            <!-- 10° Input (Contato Financeiro) -->
-
-                            <div class="form-group col-md-5">
-                                <label>Nome</label>
-                                <input type="text" id="nomeAdd2" name="nomeAdd2" class="form-control" placeholder="Nome...">
-                            </div>
-                        
-                            <div class="form-group col-md-7">
-                                <label>Departamento</label>
-                                <input type="text" id="departamentoAdd2" name="departamentoAdd2" class="form-control" placeholder="Departamento...">
-                            </div>                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>Celular</label>
-                                <input type="text" id="celularAdd2" name="celularAdd2" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
-                            </div>                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>Telefone</label>
-                                <input type="text" id="telefoneAdd2" name="telefoneAdd2" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
-                            </div>
-                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>E-mail</label>
-                                <input type="text" id="emailAdd2" name="emailAdd2" class="form-control" placeholder="E-mail...">
-                            </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="add2" id="add2" type="button" class="btn btn-success" onclick="pushAdd2()"><b>Adicionar +</b></button>
-                              </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                             <!-- Tabela 2--> 
-                             <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaAddFinanceiro" class="table table-bordered" id="tabelaAddFinanceiro" noaddbutton="true" nodeletebutton="false">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Departamento</th>
-                                                <th>Celular</th>
-                                                <th>Telefone</th>
-                                                <th>E-mail</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> 
-                            
-                        </div>        
-                    </div>
-
-                    <!-- 6° Painel -->
-                    <div class="panel panel-info" style="border-color: #222d6b;">
-                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Adicional</h3>
-                        </div>
-                        <div class="panel-body">
-                    
-                            <!-- 11° Input (Contato Adicional) -->
-
-                            <div class="form-group col-md-5">
-                                <label>Nome</label>
-                                <input type="text" id="nomeAdd3" name="nomeAdd3" class="form-control" placeholder="Nome...">
-                            </div>
-                        
-                            <div class="form-group col-md-7">
-                                <label>Departamento</label>
-                                <input type="text" id="departamentoAdd3" name="departamentoAdd3" class="form-control" placeholder="Departamento...">
-                            </div>                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>Celular</label>
-                                <input type="text" id="celularAdd3" name="celularAdd3" class="form-control" mask="(00)00000-0000" placeholder="Celular...">
-                            </div>                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>Telefone</label>
-                                <input type="text" id="telefoneAdd3" name="telefoneAdd3" class="form-control" mask="(00)0000-0000" placeholder="Telefone...">
-                            </div>
-                    
-                        
-                            <div class="form-group col-md-4">
-                                <label>E-mail</label>
-                                <input type="text" id="emailAdd3" name="emailAdd3" class="form-control" placeholder="E-mail...">
-                            </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="add3" id="add3" type="button" class="btn btn-success" onclick="pushAdd3()"><b>Adicionar +</b></button>
-                              </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                             <!-- Tabela 3--> 
-                             <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaAddAdicional" class="table table-bordered" id="tabelaAddAdicional" noaddbutton="true" nodeletebutton="false">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Departamento</th>
-                                                <th>Celular</th>
-                                                <th>Telefone</th>
-                                                <th>E-mail</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -391,15 +245,16 @@
                             <div class="form-group col-md-3">
                                 <label for="ativo">Status</label>
                                 <select name="ativo" type="text" class="form-control" id="ativo">
+                                    <option value="">Selecione...</option>
                                     <option value="Ativo">Ativo</option>
                                     <option value="Inativo">Inativo</option>
                                 </select>
                             </div>
 
                             <!-- 13° Input -->
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-9">
                                 <label for="escopoTondini">Escopo de Prestação de Serviço Tondini</label>
-                                <input name="escopoTondini" type="text" class="form-control" id="escopoTondini">
+                                <input name="escopoTondini" type="text" class="form-control" id="escopoTondini" placeholder="Escopo de Prestação de Serviço...">
                             </div>
 
                             <!-- 14° Input -->
@@ -407,7 +262,7 @@
                                 <label for="mensalidade">R$ Mensalidade</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">R$</div>
-                                    <input name="mensalidade" type="text" class="form-control" id="mensalidade" mask="#.##0,00">
+                                    <input name="mensalidade" type="text" class="form-control mMoney" id="mensalidade" placeholder="R$ 0,00">
                                 </div>
                             </div>
 
@@ -421,6 +276,7 @@
                             <div class="form-group col-md-3">
                                 <label for="formaPag">Forma de Pagamento</label>
                                 <select name="formaPag" type="text" class="form-control" id="formaPag">
+                                    <option value="">Selecione...</option>
                                     <option value="Boleto">Boleto</option>
                                     <option value="Transferência Bancária">Transferência Bancária</option>
                                 </select>
@@ -431,7 +287,7 @@
                                 <label for="indiceF">Índice Financeiro</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">R$</div>
-                                    <input name="indiceF" type="text" class="form-control" id="indiceF" mask="#.##0,00">
+                                    <input name="indiceF" type="text" class="form-control mMoney" id="indiceF"  placeholder="R$ 0,00">
                                 </div>
                             </div>
 
@@ -445,6 +301,7 @@
                             <div class="form-group col-md-3">
                                 <label for="seguimentoC">Seguimento de Cadastro Fluig</label>
                                 <select name="seguimentoC" type="text" class="form-control" id="seguimentoC">
+                                    <option value="">Selecione...</option>
                                     <option value="Serviços">Serviços</option>
                                     <option value="Industria">Industria</option>
                                     <option value="Construção Civil">Construção Civil</option>
@@ -478,25 +335,25 @@
                             <!-- 2° Input -->
                             <div class="form-group col-md-4">
                                 <label for="cnpjAdd">CNPJ</label>
-                                <input name="cnpjAdd" type="text" class="form-control" id="cnpjAdd" mask="00.000.000/0000-00">
+                                <input name="cnpjAdd" type="text" class="form-control mCnpj" id="cnpjAdd"  maxlength="18" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="CNPJ...">
                             </div>
     
                             <!-- 3° Input -->
                             <div class="form-group col-md-8">
                                 <label for="companyNameAdd">Razão Social</label>
-                                <input name="companyNameAdd" type="text" class="form-control" id="companyNameAdd">
+                                <input name="companyNameAdd" type="text" class="form-control" id="companyNameAdd" placeholder="Razão Social...">
                             </div>
     
                             <!-- 4° Input -->
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 <label for="nomeFantasiaAdd">Nome Fantasia</label>
-                                <input name="nomeFantasiaAdd" type="text" class="form-control" id="nomeFantasiaAdd">
+                                <input name="nomeFantasiaAdd" type="text" class="form-control" id="nomeFantasiaAdd" placeholder="Nome Fantasia...">
                             </div>
     
                             <!-- 5° Input -->
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 <label for="escopoAdd">Escopo de Atividades ou Certificação</label>
-                                <input name="escopoAdd" type="text" class="form-control" id="escopoAdd">
+                                <input name="escopoAdd" type="text" class="form-control" id="escopoAdd" placeholder="Escopo...">
                             </div>
                         </div>
                     </div>
@@ -511,37 +368,37 @@
                             <!-- 6° Input (Endereço e Complemento)-->
                             <div class="form-group col-md-3">
                                 <label for="cepAdd">CEP</label>
-                                <input name="cepAdd" type="text" class="form-control" id="cepAdd" mask="00000-000">
+                                <input name="cepAdd" type="text" class="form-control mCep" id="cepAdd"  maxlength="9" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="00000-000">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="enderecoAdd">Endereço</label>
-                                <input name="enderecoAdd" type="text" class="form-control" id="enderecoAdd">
+                                <input name="enderecoAdd" type="text" class="form-control" id="enderecoAdd" placeholder="Rua/Avenidada/Rodovia">
                             </div>
 
                             <div class="form-group col-md-1">
                                 <label for="numeroAdd">N°</label>
-                                <input name="numeroAdd" type="text" class="form-control" id="numeroAdd">
+                                <input name="numeroAdd" type="text" class="form-control" id="numeroAdd" placeholder="Nº00">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="complementoAdd">Complemento</label>
-                                <input name="complementoAdd" type="text" class="form-control" id="complementoAdd">
+                                <input name="complementoAdd" type="text" class="form-control" id="complementoAdd" placeholder="Complemento...">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="bairroAdd">Bairro</label>
-                                <input name="bairroAdd" type="text" class="form-control" id="bairroAdd">
+                                <input name="bairroAdd" type="text" class="form-control" id="bairroAdd" placeholder="Bairro...">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="estadoAdd">Estado</label>
-                                <input name="estadoAdd" type="text" class="form-control" id="estadoAdd">
+                                <input name="estadoAdd" type="text" class="form-control" id="estadoAdd" placeholder="Estado...">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="cidadeAdd">Pais</label>
-                                <input name="cidadeAdd" type="text" class="form-control" id="cidadeAdd">
+                                <input name="cidadeAdd" type="text" class="form-control" id="cidadeAdd" placeholder="Pais...">
                             </div>
                         </div>    
                     </div>
@@ -556,13 +413,13 @@
                             <!-- 7° Input -->
                             <div class="form-group col-md-3">
                                 <label for="telefoneAdd">Telefone Corporativo</label>
-                                <input name="telefoneAdd" type="text" class="form-control" id="telefoneAdd" mask="(00) 0000-0000">
+                                <input name="telefoneAdd" type="text" class="form-control mPhone" id="telefoneAdd"  maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Telefone Corporativo...">
                             </div>
 
                             <!-- 8° Input -->
                             <div class="form-group col-md-5">
                                 <label for="emailAdd">E-mail Corporativo</label>
-                                <input name="emailAdd" type="email" class="form-control" id="emailAdd">
+                                <input name="emailAdd" type="email" class="form-control" id="emailAdd" placeholder="E-mail Corporativo...">
                             </div>
 
                         </div>
@@ -571,43 +428,43 @@
                     <!-- 4° Painel -->
                     <div class="panel panel-info" style="border-color: #222d6b;">
                         <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Comercial</h3>
+                            <h3 class="panel-title">Contatos Adicionais</h3>
                         </div>
                         <div class="panel-body">
 
                             <!-- 9° Input (Contato Comercial)-->
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-5">
                                 <label>Nome</label>
-                                <input type="text" id="nomeCnpjAdd1" name="nomeCnpjAdd1" class="form-control">
+                                <input type="text" id="nomeCnpjAdd1" name="nomeCnpjAdd1" class="form-control" placeholder="Nome...">
                             </div>
                         
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-7">
                                 <label>Departamento</label>
-                                <input type="text" id="departamentoCnpjAdd1" name="departamentoCnpjAdd1" class="form-control">
+                                <input type="text" id="departamentoCnpjAdd1" name="departamentoCnpjAdd1" class="form-control" placeholder="Departamento...">
                             </div>                    
                         
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-4">
                                 <label>Celular</label>
-                                <input type="text" id="celularCnpjAdd1" name="celularCnpjAdd1" class="form-control" mask="(00)00000-0000">
+                                <input type="text" id="celularCnpjAdd1" name="celularCnpjAdd1" class="form-control mPhone"  maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Celular...">
                             </div>                    
                         
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-4">
                                 <label>Telefone</label>
-                                <input type="text" id="telefoneCnpjAdd1" name="telefoneCnpjAdd1" class="form-control" mask="(00)0000-0000">
+                                <input type="text" id="telefoneCnpjAdd1" name="telefoneCnpjAdd1" class="form-control mPhoneFix"  maxlength="14" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Telefone...">
                             </div>
                     
                         
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-4">
                                 <label>E-mail</label>
-                                <input type="text" id="emailCnpjAdd1" name="emailCnpjAdd1" class="form-control">
+                                <input type="text" id="emailCnpjAdd1" name="emailCnpjAdd1" class="form-control" placeholder="E-mail...">
                             </div>
 
                             <div class="clearfix"></div>
                             <br>
 
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="cnpjAdd1" id="cnpjAdd1" type="button" class="btn btn-success" onclick="pushCnpjAdd1()"><b>Adicionar +</b></button>
+                                <button name="cnpjAdd1" id="cnpjAdd1" type="button" class="btn btn-success" onclick="pushTab2('tb_contato2', 2)"><b>Adicionar +</b></button>
                               </div>
 
                             <div class="clearfix"></div>
@@ -615,7 +472,7 @@
 
                              <!-- Tabela 1--> 
                              <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaCnpjAddComercial" class="table table-bordered" id="tabelaCnpjAddComercial" noaddbutton="true" nodeletebutton="false">
+                                    <table tablename="tb_contato2" class="table table-hover" id="tb_contato2" noaddbutton="true" nodeletebutton="false">
                                         <thead>
                                             <tr>
                                                 <th>Nome</th>
@@ -629,11 +486,6 @@
                                         <tbody>
                                             <tr>
                                                 <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -641,155 +493,6 @@
                             
                         </div>
                     </div>
-
-                    <!-- 5° Painel -->
-                    <div class="panel panel-info" style="border-color: #222d6b;">
-                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Financeiro</h3>
-                        </div>
-                        <div class="panel-body">
-
-                            <!-- 10° Input (Contato Financeiro) -->
-
-                            <div class="form-group col-md-3">
-                                <label>Nome</label>
-                                <input type="text" id="nomeCnpjAdd2" name="nomeCnpjAdd2" class="form-control">
-                            </div>
-                        
-                            <div class="form-group col-md-3">
-                                <label>Departamento</label>
-                                <input type="text" id="departamentoCnpjAdd2" name="departamentoCnpjAdd2" class="form-control">
-                            </div>                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>Celular</label>
-                                <input type="text" id="celularCnpjAdd2" name="celularCnpjAdd2" class="form-control" mask="(00)00000-0000">
-                            </div>                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>Telefone</label>
-                                <input type="text" id="telefoneCnpjAdd2" name="telefoneCnpjAdd2" class="form-control" mask="(00)0000-0000">
-                            </div>
-                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>E-mail</label>
-                                <input type="text" id="emailCnpjAdd2" name="emailCnpjAdd2" class="form-control">
-                            </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="cnpjAdd2" id="cnpjAdd2" type="button" class="btn btn-success" onclick="pushCnpjAdd2()"><b>Adicionar +</b></button>
-                              </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                             <!-- Tabela 2--> 
-                             <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaCnpjAddFinanceiro" class="table table-bordered" id="tabelaCnpjAddFinanceiro" noaddbutton="true" nodeletebutton="false">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Departamento</th>
-                                                <th>Celular</th>
-                                                <th>Telefone</th>
-                                                <th>E-mail</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div> 
-                            
-                        </div>        
-                    </div>
-
-                    <!-- 6° Painel -->
-                    <div class="panel panel-info" style="border-color: #222d6b;">
-                        <div class="panel-heading" style="background-color: #222d6b; border-color: #222d6b;">
-                            <h3 class="panel-title">Contato Adicional</h3>
-                        </div>
-                        <div class="panel-body">
-                    
-                            <!-- 11° Input (Contato Adicional) -->
-
-                            <div class="form-group col-md-3">
-                                <label>Nome</label>
-                                <input type="text" id="nomeCnpjAdd3" name="nomeCnpjAdd3" class="form-control">
-                            </div>
-                        
-                            <div class="form-group col-md-3">
-                                <label>Departamento</label>
-                                <input type="text" id="departamentoCnpjAdd3" name="departamentoCnpjAdd3" class="form-control">
-                            </div>                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>Celular</label>
-                                <input type="text" id="celularCnpjAdd3" name="celularCnpjAdd3" class="form-control" mask="(00)00000-0000">
-                            </div>                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>Telefone</label>
-                                <input type="text" id="telefoneCnpjAdd3" name="telefoneCnpjAdd3" class="form-control" mask="(00)0000-0000">
-                            </div>
-                    
-                        
-                            <div class="form-group col-md-3">
-                                <label>E-mail</label>
-                                <input type="text" id="emailCnpjAdd3" name="emailCnpjAdd3" class="form-control">
-                            </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <button name="cnpjAdd3" id="cnpjAdd3" type="button" class="btn btn-success" onclick="pushCnpjAdd3()"><b>Adicionar +</b></button>
-                              </div>
-    
-                            <div class="clearfix"></div>
-                            <br>
-    
-                             <!-- Tabela 3--> 
-                             <div class="table-responsive col-md-12">
-                                    <table tablename="tabelaCnpjAddAdicional" class="table table-bordered" id="tabelaCnpjAddAdicional" noaddbutton="true" nodeletebutton="false">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Departamento</th>
-                                                <th>Celular</th>
-                                                <th>Telefone</th>
-                                                <th>E-mail</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td><div id="excluir" name="excluir"></div></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            
-                        </div>
-                    </div>
-
 
                     <!-- 7° Painel -->
                     <div class="panel panel-info" style="border-color: #222d6b;">
@@ -811,7 +514,7 @@
                             <!-- 13° Input -->
                             <div class="form-group col-md-4">
                                 <label for="escopoTondiniAdd">Escopo de Prestação de Serviço Tondini</label>
-                                <input name="escopoTondiniAdd" type="text" class="form-control" id="escopoTondiniAdd">
+                                <input name="escopoTondiniAdd" type="text" class="form-control" id="escopoTondiniAdd" placeholder="Escopo de Prestação de Serviço">
                             </div>                           
 
                         </div>
@@ -1043,8 +746,8 @@
                                 <textarea name="descricaoRs" type="time" class="form-control" id="descricaoRs" style="height: 100px"></textarea>
                             </div>
 
-                                <!-- 4° Input -->
-                                <div class="form-group col-md-12">
+                            <!-- 4° Input -->
+                            <div class="form-group col-md-12">
                                 <label for="descricaoAtv">Sugestão de Ação para Atendimento</label>
                                 <textarea name="descricaoAtv" type="text" class="form-control" id="descricaoAtv" style="height: 100px"></textarea>
                             </div>

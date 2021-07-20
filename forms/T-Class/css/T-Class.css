@@ -12,3 +12,16 @@
     animation: hide 2s 2s forwards
 
 }
+.tondini-title {
+    color: #1d394f;
+}
+.tondini-subtitle {
+    color: #30b1ea;
+}
+.panel-div1 {
+    border-color: #222d6b !important;
+}
+.panel-div2 {
+    background-color: #222d6b !important;
+    border-color: #222d6b !important;
+}
